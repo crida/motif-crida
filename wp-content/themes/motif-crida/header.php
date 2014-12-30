@@ -22,9 +22,6 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
-		<?php
-		die("test");
-		?>
 		<div class="site-branding">
 			<?php if ( get_header_image() ) : ?>
 			<div class="site-image">
