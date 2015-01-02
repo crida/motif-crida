@@ -16,6 +16,20 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
+
+<?
+/***
+START MOTIF-CRIDA MODIFICATIONS
+***/
+?>
+<script src="//use.typekit.net/qvh4hjy.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+<?
+/***
+END MOTIF-CRIDA MODIFICATIONS
+***/
+?>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -49,4 +63,3 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-		

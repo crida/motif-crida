@@ -103,7 +103,7 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: "Droid Sans", Arial, sans-serif;
+	font-family: "nimbus-sans", Arial, sans-serif;
 	font-size: 13px;
 	font-size: 1rem;
 	line-height: 1.6;
@@ -111,9 +111,15 @@ textarea {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-	font-family: "Droid Serif", Georgia, serif;
+	font-family: "museo-sans-condensed", Georgia, serif;
 	line-height: 1.4;
 }
+
+code, kbd, tt, var, pre {
+	font-family: Courier, monospace;
+}
+
+
 h1 {
 	font-size: 21px;
 	font-size: 1.6153rem;
@@ -139,14 +145,12 @@ h4 {
 	margin-bottom: 1em;
 }
 h5 {
-	font-family: "Droid Sans", sans-serif;
 	font-size: 15px;
 	font-size: 1.1538rem;
 	font-weight: bold;
 	margin-bottom: 1em;
 }
 h6 {
-	font-family: "Droid Sans", sans-serif;
 	font-size: 13px;
 	font-size: 1rem;
 	margin-bottom: 1.1538em;
@@ -204,16 +208,13 @@ address {
 }
 pre {
 	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
 	line-height: 1.4;
 	margin-bottom: 1.5em;
 	overflow-x: scroll;
 	padding: 1.1538461538em;
 	max-width: 100%;
 }
-code, kbd, tt, var {
-	font-family: "Courier 10 Pitch", Courier, monospace;
-}
+
 abbr, acronym {
 	border-bottom: 1px dotted #e6e6e6;
 	cursor: help;
@@ -847,7 +848,7 @@ footer.entry-meta {
 .format-quote blockquote:before {
 	color: #ccc;
 	content: "\201C";
-	font-family: "Droid Serif", serif;
+	font-family: serif;
 	font-size: 87px;
 	font-size: 6.6667rem;
 	line-height: 1;
@@ -857,7 +858,7 @@ footer.entry-meta {
 }
 .format-quote blockquote {
 	border-left: none;
-	font-family: "Droid Serif", serif;
+	font-family: serif;
 	font-size: 16px;
 	font-size: 1.2307rem;
 	margin-left: 0;
@@ -865,7 +866,7 @@ footer.entry-meta {
 	position: relative;
 }
 .format-quote blockquote cite {
-	font-family: "Droid Sans", Arial, sans-serif;
+	font-family: Arial, sans-serif;
 	font-size: 13px;
 	font-size: 1rem;
 }
@@ -1106,7 +1107,7 @@ object {
 	overflow: hidden;
 }
 .widget-title {
-	font-family: "Droid Serif", serif;
+	font-family: serif;
 	font-size: 21px;
 	font-size: 1.6153rem;
 	margin-bottom: 1rem;
@@ -1389,7 +1390,7 @@ object {
 
 /* Comments */
 .comments-area #respond {
-	font-family: "Droid Serif", Georgia, serif;
+	font-family: Georgia, serif;
 	padding: 25px 20px 20px 20px;
 }
 #respond h3.comment-reply-title {
@@ -1657,7 +1658,7 @@ object {
 	.menu-toggle {
 		color: #fff;
 		display: block;
-		font-family: "Droid Sans", Arial, sans-serif;
+		font-family: Arial, sans-serif;
 		font-size: 16px;
 		font-size: 1.2307rem;
 		margin-bottom: 0;

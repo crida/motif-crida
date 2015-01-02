@@ -107,6 +107,7 @@ add_action( 'after_setup_theme', 'motif_setup' );
  * Returns the Google font stylesheet URL, if available.
  */
 function motif_fonts_url() {
+	return; //motif-crida not using this using typekint fonts
 	$fonts_url = '';
 
 	/* translators: If there are characters in your language that are not supported
