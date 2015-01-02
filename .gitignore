@@ -1,4 +1,5 @@
 .remote-sync.json
+.deployment-config.json
 
 *.log
 .htaccess
