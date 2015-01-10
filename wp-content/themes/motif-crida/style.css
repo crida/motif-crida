@@ -38,7 +38,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	font-family: inherit;
 	font-size: 100%;
 	font-style: inherit;
-	font-weight: inherit;
 	margin: 0;
 	outline: 0;
 	padding: 0;
@@ -103,16 +102,36 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: "nimbus-sans", Arial, sans-serif;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
 	font-size: 13px;
 	font-size: 1rem;
 	line-height: 1.6;
 }
+
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-	font-family: "museo-sans-condensed", Georgia, serif;
+	font-family: 'Raleway', sans-serif;
 	line-height: 1.4;
+	font-weight: bold;
+}
+
+article h2 {
+	font-weight: 600;
+	clear: inherit;
+}
+
+h1 {
+	font-weight: 800;
+}
+
+.advs-title a{
+	font-weight: 800;
+}
+
+.advs-title a:hover{
+	text-decoration: none;
 }
 
 code, kbd, tt, var, pre {
@@ -123,31 +142,26 @@ code, kbd, tt, var, pre {
 h1 {
 	font-size: 21px;
 	font-size: 1.6153rem;
-	font-weight: normal;
 	margin-bottom: 0.75em;
 }
 h2 {
 	font-size: 18px;
 	font-size: 1.3846rem;
-	font-weight: normal;
 	margin-bottom: 0.85715em;
 }
 h3 {
 	font-size: 16px;
 	font-size: 1.2307rem;
-	font-weight: bold;
 	margin-bottom: 1.125em;
 }
 h4 {
 	font-size: 15px;
 	font-size: 1.1538rem;
-	font-weight: bold;
 	margin-bottom: 1em;
 }
 h5 {
 	font-size: 15px;
 	font-size: 1.1538rem;
-	font-weight: bold;
 	margin-bottom: 1em;
 }
 h6 {
@@ -636,7 +650,7 @@ a:active {
 .site-title {
 	font-size: 34px;
 	font-size: 2.6153rem;
-	font-weight: bold;
+	font-weight: 800 !important; 
 	line-height: 1;
 	margin-bottom: 0;
 }

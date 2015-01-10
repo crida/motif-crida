@@ -22,9 +22,7 @@
 START MOTIF-CRIDA MODIFICATIONS
 ***/
 ?>
-<script src="//use.typekit.net/qvh4hjy.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
-<?
+<link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'><?
 /***
 END MOTIF-CRIDA MODIFICATIONS
 ***/
