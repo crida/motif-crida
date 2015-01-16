@@ -648,18 +648,23 @@ a:active {
 	margin-bottom: 12px;
 }
 .site-title {
-	font-size: 34px;
-	font-size: 2.6153rem;
-	font-weight: 800 !important; 
+	
+}
+h1.site-title a{
 	line-height: 1;
 	margin-bottom: 0;
+	background-image: url('http://cridapersabadell.miqueladell.com/wp-content/themes/motif-crida/images/logo_500.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 300px;
+	height: 100px;
+	display: block;
 }
-.site-title a {
-	color: #333;
+
+h1.site-title  a span {
+	display: none;
 }
-.site-title a:hover {
-	text-decoration: none;
-}
+
 .site-description {
 	color: #333;
 	line-height: 1;
@@ -862,7 +867,7 @@ footer.entry-meta {
 .format-quote blockquote:before {
 	color: #ccc;
 	content: "\201C";
-	font-family: serif;
+	font-family: inherit;
 	font-size: 87px;
 	font-size: 6.6667rem;
 	line-height: 1;
@@ -872,7 +877,7 @@ footer.entry-meta {
 }
 .format-quote blockquote {
 	border-left: none;
-	font-family: serif;
+	font-family: inherit;
 	font-size: 16px;
 	font-size: 1.2307rem;
 	margin-left: 0;
@@ -880,7 +885,7 @@ footer.entry-meta {
 	position: relative;
 }
 .format-quote blockquote cite {
-	font-family: Arial, sans-serif;
+	font-family: inherit;
 	font-size: 13px;
 	font-size: 1rem;
 }
@@ -1121,7 +1126,7 @@ object {
 	overflow: hidden;
 }
 .widget-title {
-	font-family: serif;
+	font-family: inherit;
 	font-size: 21px;
 	font-size: 1.6153rem;
 	margin-bottom: 1rem;
@@ -1404,7 +1409,7 @@ object {
 
 /* Comments */
 .comments-area #respond {
-	font-family: Georgia, serif;
+	font-family: inherit;
 	padding: 25px 20px 20px 20px;
 }
 #respond h3.comment-reply-title {
@@ -1463,7 +1468,7 @@ object {
 		max-width: 1140px
 	}
 	.site-branding {
-		padding: 34px;
+		padding: 0;
 	}
 	.display-header-text .site-image {
 		margin-bottom: 17px;
@@ -1672,7 +1677,7 @@ object {
 	.menu-toggle {
 		color: #fff;
 		display: block;
-		font-family: Arial, sans-serif;
+		font-family: inherit;
 		font-size: 16px;
 		font-size: 1.2307rem;
 		margin-bottom: 0;

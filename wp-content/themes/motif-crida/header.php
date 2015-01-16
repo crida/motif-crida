@@ -45,11 +45,11 @@ END MOTIF-CRIDA MODIFICATIONS
 
 			<?php motif_the_site_logo(); ?>
 
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-
-			<?php if ( '' != get_bloginfo( 'description' ) ) : ?>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			<?php endif; ?>
+			<h1 class="site-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<span><?php bloginfo( 'name' ); ?></span>
+				</a>
+			</h1>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
