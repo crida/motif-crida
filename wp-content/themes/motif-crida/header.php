@@ -35,21 +35,46 @@ END MOTIF-CRIDA MODIFICATIONS
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<?php if ( get_header_image() ) : ?>
-			<div class="site-image">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="header-image-link">
-					<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
-				</a>
-			</div><!-- .header-image -->
-			<?php endif; ?>
 
-			<?php motif_the_site_logo(); ?>
+			<div class="main-site-branding">
+				<?php if ( get_header_image() ) : ?>
+				<div class="site-image">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="header-image-link">
+						<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
+					</a>
+				</div><!-- .header-image -->
+				<?php endif; ?>
 
-			<h1 class="site-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<span><?php bloginfo( 'name' ); ?></span>
-				</a>
-			</h1>
+				<?php motif_the_site_logo(); ?>
+
+				<h1 class="site-title">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<span><?php bloginfo( 'name' ); ?></span>
+					</a>
+				</h1>
+			</div>
+
+			<div class="secondary-site-branding">
+				<ul class="social_bar">
+					<li>
+						<a class="twitter" target="_blank" href="https://twitter.com/CridaSabadell">
+							<span>Segueix-nos a Twitter</span>
+						</a>
+					</li>
+					<li>
+						<a class="facebook" target="_blank" href="https://www.facebook.com/CridaPerSabadell">
+							<span>Fes m'agrada a Facebook</span>
+						</a>
+					</li>
+					<li>
+						<a class="youtube" target="_blank" href="https://www.youtube.com/channel/UC2H4IVQh9ePrrwL1J9iPWWA">
+							<span>Subscriu-te a YouTube</span>
+						</a>
+					</li>
+
+			</div>
+
+
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
