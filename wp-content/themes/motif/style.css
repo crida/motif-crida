@@ -73,7 +73,7 @@ table { /* tables still need 'cellspacing="0"' in the markup */
 	border-spacing: 0;
 }
 caption, th, td {
-	font-weight: normal;
+	font-weight: inherit;
 	text-align: left;
 }
 blockquote:before, blockquote:after,
@@ -117,32 +117,27 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	font-size: 21px;
 	font-size: 1.6153rem;
-	font-weight: normal;
 	margin-bottom: 0.75em;
 }
 h2 {
 	font-size: 18px;
 	font-size: 1.3846rem;
-	font-weight: normal;
 	margin-bottom: 0.85715em;
 }
 h3 {
 	font-size: 16px;
 	font-size: 1.2307rem;
-	font-weight: bold;
 	margin-bottom: 1.125em;
 }
 h4 {
 	font-size: 15px;
 	font-size: 1.1538rem;
-	font-weight: bold;
 	margin-bottom: 1em;
 }
 h5 {
 	font-family: "Droid Sans", sans-serif;
 	font-size: 15px;
 	font-size: 1.1538rem;
-	font-weight: bold;
 	margin-bottom: 1em;
 }
 h6 {
@@ -182,13 +177,13 @@ li > ol {
 	margin-left: 1.1538461538em;
 }
 dt {
-	font-weight: bold;
+	font-weight: 800;
 }
 dd {
 	margin: 0 1.1538461538em 1.5em 1.1538461538em;
 }
 b, strong {
-	font-weight: bold;
+	font-weight: 800;
 }
 dfn, cite, em, i {
 	font-style: italic;
@@ -251,7 +246,7 @@ table {
 	width: 100%;
 }
 th {
-	font-weight: bold;
+	font-weight: 800;
 	padding: 0.6em;
 	text-transform: uppercase;
 }
@@ -421,7 +416,7 @@ a:active {
 	display: block;
 	font-size: 14px;
 	font-size: 1.0769rem;
-	font-weight: bold;
+	font-weight: 800;
 	height: auto;
 	left: 5px;
 	line-height: normal;
@@ -446,7 +441,7 @@ a:active {
 	font-family: Genericons;
 	font-size: 14px;
 	font-size: 1.0769rem;
-	font-weight: normal;
+	font-weight: inherit;
 	line-height: 1;
 	vertical-align: text-bottom;
 	-webkit-font-smoothing: antialiased;
@@ -635,7 +630,7 @@ a:active {
 .site-title {
 	font-size: 34px;
 	font-size: 2.6153rem;
-	font-weight: bold;
+	font-weight: 800;
 	line-height: 1;
 	margin-bottom: 0;
 }
@@ -1014,7 +1009,7 @@ object {
 .comment-author .fn {
 	display: inline-block;
 	font-style: normal;
-	font-weight: normal;
+	font-weight: inherit;
 	margin-top: 5px;
 }
 .comment-author .fn a {
@@ -1069,7 +1064,7 @@ object {
 	color: #666;
 	font-size: 18px;
 	font-size: 1.3846rem;
-	font-weight: normal;
+	font-weight: inherit;
 }
 .form-allowed-tags {
 	font-size: 11px;
@@ -1345,7 +1340,7 @@ object {
 	color: #404040;
 	font-size: 16px;
 	font-size: 1.2307rem;
-	font-weight: bold;
+	font-weight: 800;
 	text-align: right;
 }
 .jetpack-testimonial .entry-title:before {
@@ -1396,7 +1391,7 @@ object {
 	color: #666;
 	font-size: 18px;
 	font-size: 1.3846rem;
-	font-weight: normal;
+	font-weight: inherit;
 	margin: 0 0 1.125em 0;
 }
 

@@ -22,7 +22,8 @@
 START MOTIF-CRIDA MODIFICATIONS
 ***/
 ?>
-<link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'><?
+<link href='/wp-content/themes/motif-crida/fonts/Futura-LT-webfontkit-lite/stylesheet.css' rel='stylesheet' type='text/css'>
+<?
 /***
 END MOTIF-CRIDA MODIFICATIONS
 ***/

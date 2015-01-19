@@ -102,7 +102,7 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Futura-LT', sans-serif;
 	font-weight: 300;
 	font-size: 13px;
 	font-size: 1rem;
@@ -112,9 +112,9 @@ textarea {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Futura-LT', sans-serif;
 	line-height: 1.4;
-	font-weight: bold;
+	font-weight: 800;
 }
 
 article h2 {
@@ -206,7 +206,7 @@ dd {
 	margin: 0 1.1538461538em 1.5em 1.1538461538em;
 }
 b, strong {
-	font-weight: bold;
+	font-weight: 800;
 }
 dfn, cite, em, i {
 	font-style: italic;
@@ -266,7 +266,7 @@ table {
 	width: 100%;
 }
 th {
-	font-weight: bold;
+	font-weight: 800;
 	padding: 0.6em;
 	text-transform: uppercase;
 }
@@ -436,7 +436,7 @@ a:active {
 	display: block;
 	font-size: 14px;
 	font-size: 1.0769rem;
-	font-weight: bold;
+	font-weight: 800;
 	height: auto;
 	left: 5px;
 	line-height: normal;
@@ -1365,7 +1365,7 @@ object {
 	color: #404040;
 	font-size: 16px;
 	font-size: 1.2307rem;
-	font-weight: bold;
+	font-weight: 800;
 	text-align: right;
 }
 .jetpack-testimonial .entry-title:before {
