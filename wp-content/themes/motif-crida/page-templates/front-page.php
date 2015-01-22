@@ -8,9 +8,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area front-page-content-area">
-		foobar
 		<?php echo do_shortcode( '[advps-slideshow optset="1"]' ); ?>
-		barfoo
 		<?php while ( have_posts() ) : the_post(); ?>
 			<div class="hero <?php echo ( '' != get_the_post_thumbnail() ) ? 'with-featured-image' : 'without-featured-image'; ?>">
 

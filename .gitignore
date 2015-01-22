@@ -1,3 +1,6 @@
+.remote-sync.json
+.deployment-config.json
+
 *.log
 .htaccess
 sitemap.xml
@@ -11,3 +14,5 @@ wp-content/cache/
 wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
+sftp-config.json
+_sftp-config.json

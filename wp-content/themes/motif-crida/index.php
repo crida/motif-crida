@@ -9,6 +9,10 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
+		<div id="crida-advps-slideshow">
+			<?php echo do_shortcode( '[advps-slideshow optset="1"]' ); ?>
+		</div>
+
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>

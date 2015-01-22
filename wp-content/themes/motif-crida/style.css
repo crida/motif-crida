@@ -38,7 +38,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	font-family: inherit;
 	font-size: 100%;
 	font-style: inherit;
-	font-weight: inherit;
 	margin: 0;
 	outline: 0;
 	padding: 0;
@@ -73,7 +72,7 @@ table { /* tables still need 'cellspacing="0"' in the markup */
 	border-spacing: 0;
 }
 caption, th, td {
-	font-weight: normal;
+	font-weight: inherit;
 	text-align: left;
 }
 blockquote:before, blockquote:after,
@@ -103,50 +102,65 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: "Droid Sans", Arial, sans-serif;
+	font-family: 'Futura-LT', sans-serif;
+	font-weight: 300;
 	font-size: 13px;
 	font-size: 1rem;
 	line-height: 1.6;
 }
+
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-	font-family: "Droid Serif", Georgia, serif;
+	font-family: 'Futura-LT', sans-serif;
 	line-height: 1.4;
+	font-weight: 800;
 }
+
+article h2 {
+	font-weight: 600;
+	clear: inherit;
+}
+
+.advs-title a{
+	font-weight: inherit;
+}
+
+.advs-title a:hover{
+	text-decoration: none;
+}
+
+code, kbd, tt, var, pre {
+	font-family: Courier, monospace;
+}
+
+
 h1 {
 	font-size: 21px;
 	font-size: 1.6153rem;
-	font-weight: normal;
 	margin-bottom: 0.75em;
 }
 h2 {
 	font-size: 18px;
 	font-size: 1.3846rem;
-	font-weight: normal;
 	margin-bottom: 0.85715em;
 }
 h3 {
 	font-size: 16px;
 	font-size: 1.2307rem;
-	font-weight: bold;
 	margin-bottom: 1.125em;
 }
 h4 {
 	font-size: 15px;
 	font-size: 1.1538rem;
-	font-weight: bold;
 	margin-bottom: 1em;
 }
 h5 {
-	font-family: "Droid Sans", sans-serif;
 	font-size: 15px;
 	font-size: 1.1538rem;
-	font-weight: bold;
 	margin-bottom: 1em;
 }
 h6 {
-	font-family: "Droid Sans", sans-serif;
 	font-size: 13px;
 	font-size: 1rem;
 	margin-bottom: 1.1538em;
@@ -182,13 +196,13 @@ li > ol {
 	margin-left: 1.1538461538em;
 }
 dt {
-	font-weight: bold;
+	font-weight: 800;
 }
 dd {
 	margin: 0 1.1538461538em 1.5em 1.1538461538em;
 }
 b, strong {
-	font-weight: bold;
+	font-weight: 800;
 }
 dfn, cite, em, i {
 	font-style: italic;
@@ -204,16 +218,13 @@ address {
 }
 pre {
 	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
 	line-height: 1.4;
 	margin-bottom: 1.5em;
 	overflow-x: scroll;
 	padding: 1.1538461538em;
 	max-width: 100%;
 }
-code, kbd, tt, var {
-	font-family: "Courier 10 Pitch", Courier, monospace;
-}
+
 abbr, acronym {
 	border-bottom: 1px dotted #e6e6e6;
 	cursor: help;
@@ -251,7 +262,7 @@ table {
 	width: 100%;
 }
 th {
-	font-weight: bold;
+	font-weight: 800;
 	padding: 0.6em;
 	text-transform: uppercase;
 }
@@ -421,7 +432,7 @@ a:active {
 	display: block;
 	font-size: 14px;
 	font-size: 1.0769rem;
-	font-weight: bold;
+	font-weight: 800;
 	height: auto;
 	left: 5px;
 	line-height: normal;
@@ -446,7 +457,7 @@ a:active {
 	font-family: Genericons;
 	font-size: 14px;
 	font-size: 1.0769rem;
-	font-weight: normal;
+	font-weight: inherit;
 	line-height: 1;
 	vertical-align: text-bottom;
 	-webkit-font-smoothing: antialiased;
@@ -633,23 +644,79 @@ a:active {
 	margin-bottom: 12px;
 }
 .site-title {
-	font-size: 34px;
-	font-size: 2.6153rem;
-	font-weight: bold;
+	
+}
+
+.main-site-branding {
+	float: left;
+	width: auto;
+}
+
+
+h1.site-title a{
 	line-height: 1;
 	margin-bottom: 0;
+	background-image: url('/wp-content/themes/motif-crida/images/logo_500.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 300px;
+	height: 100px;
+	display: block;
 }
-.site-title a {
-	color: #333;
+
+
+h1.site-title  a span {
+	display: none;
 }
-.site-title a:hover {
-	text-decoration: none;
+
+.secondary-site-branding {
+	float: right;
+	width: auto;
 }
+
+.secondary-site-branding .social_bar li {
+	float: left;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+.secondary-site-branding .social_bar a {
+	margin-top: 25px;
+	margin-left: 5px;
+	margin-right: 5px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 50px;
+	display: block;
+}
+
+.secondary-site-branding .social_bar a span {
+	display: none;
+}
+
+
+.secondary-site-branding .social_bar a.twitter {
+	background-image: url('images/twitter.png');
+}
+
+.secondary-site-branding .social_bar a.facebook {
+	background-image: url('images/facebook.png');
+}
+
+.secondary-site-branding .social_bar a.youtube {
+	background-image: url('images/youtube.png');
+}
+
+
 .site-description {
 	color: #333;
 	line-height: 1;
 	margin: 10px 0 0 0;
 }
+
 
 /* =Content
 ----------------------------------------------- */
@@ -847,7 +914,7 @@ footer.entry-meta {
 .format-quote blockquote:before {
 	color: #ccc;
 	content: "\201C";
-	font-family: "Droid Serif", serif;
+	font-family: inherit;
 	font-size: 87px;
 	font-size: 6.6667rem;
 	line-height: 1;
@@ -857,7 +924,7 @@ footer.entry-meta {
 }
 .format-quote blockquote {
 	border-left: none;
-	font-family: "Droid Serif", serif;
+	font-family: inherit;
 	font-size: 16px;
 	font-size: 1.2307rem;
 	margin-left: 0;
@@ -865,7 +932,7 @@ footer.entry-meta {
 	position: relative;
 }
 .format-quote blockquote cite {
-	font-family: "Droid Sans", Arial, sans-serif;
+	font-family: inherit;
 	font-size: 13px;
 	font-size: 1rem;
 }
@@ -1014,7 +1081,7 @@ object {
 .comment-author .fn {
 	display: inline-block;
 	font-style: normal;
-	font-weight: normal;
+	font-weight: inherit;
 	margin-top: 5px;
 }
 .comment-author .fn a {
@@ -1069,7 +1136,7 @@ object {
 	color: #666;
 	font-size: 18px;
 	font-size: 1.3846rem;
-	font-weight: normal;
+	font-weight: inherit;
 }
 .form-allowed-tags {
 	font-size: 11px;
@@ -1106,7 +1173,7 @@ object {
 	overflow: hidden;
 }
 .widget-title {
-	font-family: "Droid Serif", serif;
+	font-family: inherit;
 	font-size: 21px;
 	font-size: 1.6153rem;
 	margin-bottom: 1rem;
@@ -1345,7 +1412,7 @@ object {
 	color: #404040;
 	font-size: 16px;
 	font-size: 1.2307rem;
-	font-weight: bold;
+	font-weight: 800;
 	text-align: right;
 }
 .jetpack-testimonial .entry-title:before {
@@ -1389,14 +1456,14 @@ object {
 
 /* Comments */
 .comments-area #respond {
-	font-family: "Droid Serif", Georgia, serif;
+	font-family: inherit;
 	padding: 25px 20px 20px 20px;
 }
 #respond h3.comment-reply-title {
 	color: #666;
 	font-size: 18px;
 	font-size: 1.3846rem;
-	font-weight: normal;
+	font-weight: inherit;
 	margin: 0 0 1.125em 0;
 }
 
@@ -1448,7 +1515,7 @@ object {
 		max-width: 1140px
 	}
 	.site-branding {
-		padding: 34px;
+		padding: 0;
 	}
 	.display-header-text .site-image {
 		margin-bottom: 17px;
@@ -1657,7 +1724,7 @@ object {
 	.menu-toggle {
 		color: #fff;
 		display: block;
-		font-family: "Droid Sans", Arial, sans-serif;
+		font-family: inherit;
 		font-size: 16px;
 		font-size: 1.2307rem;
 		margin-bottom: 0;
@@ -1736,4 +1803,145 @@ object {
 	.site-logo {
 		max-width: 100%;
 	}
+}
+
+
+
+
+
+
+
+
+.first.footer-widgets {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+
+#contactFooter {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#contactFooter li {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	border: 0px;
+
+	width: 75%;
+}
+
+#contactFooter li:first-child {
+	width: 25%;
+}
+#contactFooter img {
+	height: 50px;
+	width: 166px;
+	max-width: auto;
+}
+
+#contactFooter p {
+	font-size: 18px;
+	line-height: 50px;
+	text-align: right;
+	margin: 0px;
+	padding: 0px;
+}
+
+.site-info {
+	display: none;
+}
+
+.first.footer-widgets {
+	height: 50px;
+}
+
+
+
+
+
+
+/* =Menu
+----------------------------------------------- */
+.home .secondary-navigation {
+	display: none;
+}
+
+.secondary-navigation {
+	background-color: #2e2e2e;
+	display: block;
+	padding: 1em 	2.42857em;
+	margin-top: 1em;
+}
+.secondary-navigation ul {
+	list-style: none;
+	margin: 0;
+}
+.secondary-navigation li {
+	float: left;
+	padding: 0.467em 0.267em 0.467em 0;
+	position: relative;
+}
+.secondary-navigation a {
+	color: #fff;
+	display: block;
+	font-size: 10px;
+	font-size: 0.7230rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	-webkit-transition: all 0.2s ease;
+	        transition: all 0.2s ease;
+}
+.secondary-navigation ul ul {
+	background-color: #4f4f4f;
+	display: none;
+	float: left;
+	left: -0.667em;
+	position: absolute;
+	top: 2.6em;
+	z-index: 99999;
+}
+.secondary-navigation ul ul li {
+	border-top: 1px dotted #5d5c5c;
+	padding: 0;
+}
+.secondary-navigation ul ul li:first-child {
+	border-top: 0;
+}
+.secondary-navigation ul ul a {
+	padding: 1.0849em;
+	width: 203px;
+}
+.secondary-navigation ul ul ul {
+	background-color: #727272;
+	left: 100%;
+	top: 0;
+}
+.secondary-navigation ul ul ul li {
+	border-top: 1px dotted #8f8f8f;
+}
+.secondary-navigation ul ul ul li:first-child {
+	border-top: 0;
+}
+.secondary-navigation ul ul ul a {
+	width: 136px;
+}
+.secondary-navigation a:hover,
+.secondary-navigation ul :hover > a,
+.secondary-navigation ul ul :hover > a {
+	color: #afafaf;
+}
+.secondary-navigation ul li:hover > ul {
+	display: block;
+}
+.secondary-navigation li.current_page_item > a,
+.secondary-navigation li.current-menu-item > a,
+.secondary-navigation li.current_page_ancestor > a,
+.secondary-navigation li.current-menu-ancestor > a {
+	color: #afafaf;
 }

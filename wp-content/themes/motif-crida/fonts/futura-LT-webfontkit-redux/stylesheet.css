@@ -1,0 +1,150 @@
+/*
+weight  name        italics?
+300     light       ✓
+400     regular     ✓   
+600     heavy       ✓       
+700     bold        ✓
+800     extra bold  ✓
+*/
+
+/*futura_ltlight*/
+@font-face {
+    font-family: 'Futura-LT';
+    src: url('futuralt-light-webfont.eot');
+    src: url('futuralt-light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('futuralt-light-webfont.woff2') format('woff2'),
+    url('futuralt-light-webfont.woff') format('woff'),
+    url('futuralt-light-webfont.ttf') format('truetype'),
+    url('futuralt-light-webfont.svg#futura_ltlight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/*futura_ltlightoblique*/
+@font-face {
+    font-family: 'Futura-LT';
+    src: url('futuralt-lightoblique-webfont.eot');
+    src: url('futuralt-lightoblique-webfont.eot?#iefix') format('embedded-opentype'),
+    url('futuralt-lightoblique-webfont.woff2') format('woff2'),
+    url('futuralt-lightoblique-webfont.woff') format('woff'),
+    url('futuralt-lightoblique-webfont.ttf') format('truetype'),
+    url('futuralt-lightoblique-webfont.svg#futura_ltlightoblique') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+
+/*futura_ltregular*/
+@font-face {
+    font-family: 'Futura-LT';
+    src: url('futuralt-webfont.eot');
+    src: url('futuralt-webfont.eot?#iefix') format('embedded-opentype'),
+    url('futuralt-webfont.woff2') format('woff2'),
+    url('futuralt-webfont.woff') format('woff'),
+    url('futuralt-webfont.ttf') format('truetype'),
+    url('futuralt-webfont.svg#futura_ltregular') format('svg');
+    font-weight: 400; /*normal*/
+    font-style: normal;
+}
+
+/*futura_ltoblique*/
+@font-face {
+    font-family: 'Futura-LT';
+    src: url('futuralt-oblique-webfont.eot');
+    src: url('futuralt-oblique-webfont.eot?#iefix') format('embedded-opentype'),
+    url('futuralt-oblique-webfont.woff2') format('woff2'),
+    url('futuralt-oblique-webfont.woff') format('woff'),
+    url('futuralt-oblique-webfont.ttf') format('truetype'),
+    url('futuralt-oblique-webfont.svg#futura_ltoblique') format('svg');
+    font-weight: 400; /*normal*/
+    font-style: italic;
+    
+}
+
+
+
+/*futura_ltbold*/
+@font-face {
+    font-family: 'Futura-LT';
+    src: url('futuralt-bold-webfont.eot');
+    src: url('futuralt-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('futuralt-bold-webfont.woff2') format('woff2'),
+    url('futuralt-bold-webfont.woff') format('woff'),
+    url('futuralt-bold-webfont.ttf') format('truetype'),
+    url('futuralt-bold-webfont.svg#futura_ltbold') format('svg');
+    font-weight: 700; /*bold*/
+    font-style: normal;
+}
+
+
+
+/*futura_ltboldoblique*/
+@font-face {
+    font-family: 'Futura-LT';
+    src: url('futuralt-boldoblique-webfont.eot');
+    src: url('futuralt-boldoblique-webfont.eot?#iefix') format('embedded-opentype'),
+    url('futuralt-boldoblique-webfont.woff2') format('woff2'),
+    url('futuralt-boldoblique-webfont.woff') format('woff'),
+    url('futuralt-boldoblique-webfont.ttf') format('truetype'),
+    url('futuralt-boldoblique-webfont.svg#futura_ltboldoblique') format('svg');
+    font-weight: 700; /*bold*/
+    font-style: italic;
+}
+
+
+/*futura_ltheavy*/
+@font-face {
+    font-family: 'Futura-LT';
+    src: url('futuralt-heavy-webfont.eot');
+    src: url('futuralt-heavy-webfont.eot?#iefix') format('embedded-opentype'),
+    url('futuralt-heavy-webfont.woff2') format('woff2'),
+    url('futuralt-heavy-webfont.woff') format('woff'),
+    url('futuralt-heavy-webfont.ttf') format('truetype'),
+    url('futuralt-heavy-webfont.svg#futura_ltheavy') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    
+}
+
+/*futura_ltheavyoblique*/
+@font-face {
+    font-family: 'Futura-LT';
+    src: url('futuralt-heavyoblique-webfont.eot');
+    src: url('futuralt-heavyoblique-webfont.eot?#iefix') format('embedded-opentype'),
+    url('futuralt-heavyoblique-webfont.woff2') format('woff2'),
+    url('futuralt-heavyoblique-webfont.woff') format('woff'),
+    url('futuralt-heavyoblique-webfont.ttf') format('truetype'),
+    url('futuralt-heavyoblique-webfont.svg#futura_ltheavyoblique') format('svg');
+    font-weight: 600;
+    font-style: italic;
+    
+}
+
+
+/*futura_ltextrabold*/
+@font-face {
+    font-family: 'Futura-LT';
+    src: url('futuralt-extrabold-webfont.eot');
+    src: url('futuralt-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('futuralt-extrabold-webfont.woff2') format('woff2'),
+    url('futuralt-extrabold-webfont.woff') format('woff'),
+    url('futuralt-extrabold-webfont.ttf') format('truetype'),
+    url('futuralt-extrabold-webfont.svg#futura_ltextrabold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+    
+}
+
+/*futura_ltextraboldoblique*/
+@font-face {
+    font-family: 'Futura-LT';
+    src: url('futuralt-extraboldoblique-webfont.eot');
+    src: url('futuralt-extraboldoblique-webfont.eot?#iefix') format('embedded-opentype'),
+    url('futuralt-extraboldoblique-webfont.woff2') format('woff2'),
+    url('futuralt-extraboldoblique-webfont.woff') format('woff'),
+    url('futuralt-extraboldoblique-webfont.ttf') format('truetype'),
+    url('futuralt-extraboldoblique-webfont.svg#futura_ltextraboldoblique') format('svg');
+    font-weight: 800;
+    font-style: italic;
+    
+}
