@@ -6,12 +6,16 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area
+	<?php
+	if(get_post_format() == "video"){
+		echo "full-width";
+	}
+	?>
+	">
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-
 			<?php get_template_part( 'content', get_post_format() ); ?>
 
 			<?php motif_content_nav( 'nav-below' ); ?>
@@ -27,5 +31,8 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php if(get_post_format() != "video"){ ?>
+	<?php get_sidebar(); ?>
+<?php } ?>
+
 <?php get_footer(); ?>
