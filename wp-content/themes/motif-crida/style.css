@@ -1804,3 +1804,144 @@ object {
 		max-width: 100%;
 	}
 }
+
+
+
+
+
+
+
+
+.first.footer-widgets {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+
+#contactFooter {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#contactFooter li {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	border: 0px;
+
+	width: 75%;
+}
+
+#contactFooter li:first-child {
+	width: 25%;
+}
+#contactFooter img {
+	height: 50px;
+	width: 166px;
+	max-width: auto;
+}
+
+#contactFooter p {
+	font-size: 18px;
+	line-height: 50px;
+	text-align: right;
+	margin: 0px;
+	padding: 0px;
+}
+
+.site-info {
+	display: none;
+}
+
+.first.footer-widgets {
+	height: 50px;
+}
+
+
+
+
+
+
+/* =Menu
+----------------------------------------------- */
+.home .secondary-navigation {
+	display: none;
+}
+
+.secondary-navigation {
+	background-color: #2e2e2e;
+	display: block;
+	padding: 1em 	2.42857em;
+	margin-top: 1em;
+}
+.secondary-navigation ul {
+	list-style: none;
+	margin: 0;
+}
+.secondary-navigation li {
+	float: left;
+	padding: 0.467em 0.267em 0.467em 0;
+	position: relative;
+}
+.secondary-navigation a {
+	color: #fff;
+	display: block;
+	font-size: 10px;
+	font-size: 0.7230rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	-webkit-transition: all 0.2s ease;
+	        transition: all 0.2s ease;
+}
+.secondary-navigation ul ul {
+	background-color: #4f4f4f;
+	display: none;
+	float: left;
+	left: -0.667em;
+	position: absolute;
+	top: 2.6em;
+	z-index: 99999;
+}
+.secondary-navigation ul ul li {
+	border-top: 1px dotted #5d5c5c;
+	padding: 0;
+}
+.secondary-navigation ul ul li:first-child {
+	border-top: 0;
+}
+.secondary-navigation ul ul a {
+	padding: 1.0849em;
+	width: 203px;
+}
+.secondary-navigation ul ul ul {
+	background-color: #727272;
+	left: 100%;
+	top: 0;
+}
+.secondary-navigation ul ul ul li {
+	border-top: 1px dotted #8f8f8f;
+}
+.secondary-navigation ul ul ul li:first-child {
+	border-top: 0;
+}
+.secondary-navigation ul ul ul a {
+	width: 136px;
+}
+.secondary-navigation a:hover,
+.secondary-navigation ul :hover > a,
+.secondary-navigation ul ul :hover > a {
+	color: #afafaf;
+}
+.secondary-navigation ul li:hover > ul {
+	display: block;
+}
+.secondary-navigation li.current_page_item > a,
+.secondary-navigation li.current-menu-item > a,
+.secondary-navigation li.current_page_ancestor > a,
+.secondary-navigation li.current-menu-ancestor > a {
+	color: #afafaf;
+}

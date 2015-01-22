@@ -84,6 +84,15 @@ END MOTIF-CRIDA MODIFICATIONS
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
+
+		<?php if ( has_nav_menu( 'secondary' ) ) : ?>
+		<div id="secondary-menu" class="secondary-menu">
+			<nav id="secondary-navigation" class="secondary-navigation subordinate-navigation" role="navigation">
+				<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'container' => false, 'fallback_cb' => false, 'depth' => 1 ) ); ?>
+			</nav><!-- #secondary-navigation -->
+		</div><!-- #secondary-menu -->
+		<?php endif; ?>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
