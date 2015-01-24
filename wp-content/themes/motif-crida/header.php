@@ -22,7 +22,8 @@
 START MOTIF-CRIDA MODIFICATIONS
 ***/
 ?>
-<link href='/wp-content/themes/motif-crida/fonts/Futura-LT-webfontkit-lite/stylesheet.css' rel='stylesheet' type='text/css'>
+<script src="//use.typekit.net/qvh4hjy.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
 <?
 /***
 END MOTIF-CRIDA MODIFICATIONS

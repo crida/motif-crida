@@ -102,8 +102,8 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: 'Futura-LT', sans-serif;
-	font-weight: 300;
+	font-family: "futura-pt", sans-serif;
+	font-weight: 400;
 	font-size: 13px;
 	font-size: 1rem;
 	line-height: 1.6;
@@ -112,7 +112,7 @@ textarea {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-	font-family: 'Futura-LT', sans-serif;
+	font-family: "futura-pt", sans-serif;
 	line-height: 1.4;
 	font-weight: 800;
 }
