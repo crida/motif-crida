@@ -1812,13 +1812,14 @@ object {
 
 
 
+
+/* =Footer - contactan's per a la Crida
+----------------------------------------------- */
 .first.footer-widgets {
 	width: 100%;
 	margin: 0px;
 	padding: 0px;
 }
-
-
 
 #contactFooter {
 	width: 100%;
@@ -1866,8 +1867,10 @@ object {
 
 
 
-/* =Menu
+/* =Menu secondari per a la Crida
 ----------------------------------------------- */
+
+
 .home .secondary-navigation {
 	display: none;
 }
