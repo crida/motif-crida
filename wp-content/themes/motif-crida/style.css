@@ -1821,6 +1821,10 @@ object {
 	padding: 0px;
 }
 
+#text-3 {
+	margin: 0px;
+}
+
 #contactFooter {
 	width: 100%;
 	margin: 0px;
@@ -1841,14 +1845,13 @@ object {
 	width: 25%;
 }
 #contactFooter img {
-	height: 50px;
-	width: 166px;
+	width: 100%;
 	max-width: auto;
 }
 
 #contactFooter p {
-	font-size: 18px;
-	line-height: 50px;
+	font-size: 1.5em;
+	line-height: 1em;
 	text-align: right;
 	margin: 0px;
 	padding: 0px;
@@ -1859,7 +1862,7 @@ object {
 }
 
 .first.footer-widgets {
-	height: 50px;
+	height: auto;
 }
 
 
