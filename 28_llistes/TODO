@@ -1,0 +1,13 @@
+- treure totals de taula
+- treure totals totals
+- central de dades amb totals totals
+
+
+- guardat de dades al navegador (localstorage)
+- recuperat de dades del navegador (localstorage)
+- marcar més clarament les butlletes blanques
+- Fer que es puguin introduir noms amb accents (encoding)
+- millores gràfiques (llistats amb bootstrap)
+- fer la sel·lecció de guanyadors automàticament
+- falta l'id al total de taules
+- introdueix blancs

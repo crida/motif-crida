@@ -1,0 +1,271 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-size: 12px;
+    padding: 4em 0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #FFF;
+    background: #333;
+}
+
+.formHolder {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #222;
+}
+
+.formHolder label {
+    color: #fff;
+}
+
+h1 {
+    float: left;
+    margin: 0.5em;
+}
+
+.confirmations-toggle-holder,
+.two-columns-toggle-holder {
+    float: right;
+    margin: 1em;
+}
+
+h2 {
+    font-size: 1.2em;
+    width: 100%;
+    float: left;
+    clear: both;
+    border-bottom: 1px solid #222;
+    border-left: 1px solid #222;
+    padding-left: 0.5em;
+    box-sizing: border-box;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+form {
+    padding: 1em;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="url"] {
+    border: 1px solid black;
+}
+
+.vot-input {
+    float: left;
+}
+
+.formHolder form {
+    width: 100%;
+}
+
+.enviar-butlleta-button,
+.refrescar-pagina-button {
+    float: right;
+}
+
+.donesHolder,
+.homesHolder {
+    width: 50%;
+    float: left;
+}
+
+.oneColumn .donesHolder,
+.oneColumn .homesHolder {
+    margin-right: 5em;
+    width: auto;
+}
+
+.llistaHolder,
+.votesHolder {
+    padding: 1em;
+}
+
+.oneColumn .llistaHolder,
+.oneColumn .votesHolder {
+    width: 50%;
+    float: left;
+}
+
+.voteList {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+}
+
+.oneColumn .voteList {
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
+}
+
+    .voteList li {
+        display: inline-block; /*necessary*/
+        width: auto;
+        background: #eee;
+        border-bottom: 1px solid black;
+        cursor: pointer;
+    }
+
+    .oneColumn .voteList li {
+        display: block;
+        float: left;
+        clear: both;
+        margin: 4px 0px;
+    }
+
+        .voteList li.disabled, .voteList li.limit {
+            opacity: 0.4;
+            cursor: auto;
+        }
+
+        .voteList li.selected {
+            opacity: 0.8;
+            background: rgba(0, 250, 0, 0.37);
+        }
+
+        .votesHolder .voteList li.disabled {
+            cursor: auto;
+        }
+
+        .voteList li div {
+            border-right: 1px solid black;
+            float: left;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+        }
+
+        .voteList li .id {
+            width: 2em;
+            text-align: right;
+        }
+
+        .voteList li .cognoms {
+            margin-left: 0.25em;
+        }
+
+        .voteList li .nameSpace {
+            width: 14em;
+            overflow: hidden;
+        }
+
+        .voteList li .vots {
+            width: 2em;
+            overflow: hidden;
+            display: none;
+        }
+
+.errors {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    margin-left: -25%;
+    width: 50%;
+    z-index: 1;
+}
+
+    .error {
+        background: #c22;
+        opacity: 0.8;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2em;
+        border: 1px solid #F00;
+        padding: 1em;
+        margin: 1em;
+        cursor: pointer;
+        border-radius: 1em;
+    }
+
+.noticeFases {
+    padding: 1em;
+    font-size: 1.5em;
+    float: left;
+}
+
+.notes {
+    font-size: 1.5em;
+    float: left;
+    padding: 1em;
+}
+
+
+.panel-taula {
+    width: 21em;
+    margin: 2em 2em 0em 2em;
+    float: left;
+}
+
+.panel-taula.disabled {
+    opacity: 0.5;
+}
+
+.otherTables {
+    width: 25em;
+    float: left;
+    border-right: 1px solid #eee;
+    margin-bottom: 5em;
+}
+
+.thisTableBallots {
+    width: 25em;
+    float: left;
+    border-right: 1px solid #eee;
+    margin-bottom: 5em;
+}
+
+.thisTableTotals {
+    width: 25em;
+    float: left;
+    border-right: 1px solid #eee;
+    margin-bottom: 5em;
+}
+
+.generalTableTotals {
+    float: left;
+    border-right: 1px solid #eee;
+}
+
+.generalTableTotals .panel-taula {
+    float: left;
+}
+
+input[type="text"]:focus {
+    background: #72B7F2 ;
+    font-weight: bold;
+}
+
+pre {
+    font-size: 0.8em;
+    border-radius: 1em;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.noticeFases ol {
+    border-radius: 1em;
+    background: #eee;
+    padding: 1em 1em 1em 3em;
+    margin-left: 0em;
+}
+
+.adminButtons {
+    clear: both;
+    float: left;
+    width: 100%;
+    border-top: 1px solid black;
+    margin: 5em 0;
+    padding: 2em 0;
+}

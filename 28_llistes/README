@@ -1,0 +1,14 @@
+- No es pot recarregar la pàgina manualment un
+  cop es comença la introducció de dades
+- Els vots nuls no es poden introduïr,
+  s'han de contar apart
+- Una butlleta errònia només es pot esborrar
+  just després d'introduirla. Si seguim
+  introduint després d'una errónia haurem de
+  tornar a començar la taula
+- Es poden introduïr vots escribint els número
+  que hi ha just davant el nom de cada persona
+  candidata. Per que aquest sistema funcioni
+  la casella per introduir text ha d'estar
+  activa (en blau)
+- Es pot enviar una butlleta prement [enter]

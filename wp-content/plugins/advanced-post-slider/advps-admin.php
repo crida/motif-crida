@@ -13,18 +13,37 @@
 	{
 		$currTab = 'one';
 	}
+	if(isset($_GET['hide'])){
+		update_option('advps-update-notification','hide');
+	}
 	if(isset($_POST['optset-id'])){
 		if ( !isset($_POST['advps_wpnonce']) || !wp_verify_nonce($_POST['advps_wpnonce'],'advps-checkauthnonce') )
 		{
 			print 'Sorry, your nonce did not verify.';
 			exit;
 		}
-			
+		
+		if(isset($_POST['del-optset'])){
 		$q_del = $wpdb->prepare("delete from ".$wpdb->prefix."advps_optionset where id = %d",$_POST['optset-id']);
 			
-		if($wpdb->query($q_del)){
-			delete_option('optset'.$_POST['optset-id']);
-			$stsMgs =  "Deleted successfully.";
+			if($wpdb->query($q_del)){
+				delete_option('optset'.$_POST['optset-id']);
+				$stsMgs =  "Deleted successfully.";
+			}
+		}
+		elseif(isset($_POST['dup-optset'])){
+			
+			$q_sel = "select * from ".$wpdb->prefix."advps_optionset where id = ".$_POST['optset-id'];
+			$res = $wpdb->get_results($q_sel);
+			//echo get_option('advpssmethod'.$_POST['optset-id']);exit;
+			//echo '<pre>';
+			//print_r($res);exit;
+			$q_add = $wpdb->prepare("insert into ".$wpdb->prefix."advps_optionset (template,plist,query,slider,caro_ticker,container,content,navigation) values(%s,%s,%s,%s,%s,%s,%s,%s)",$res[0]->template,$res[0]->plist,$res[0]->query,$res[0]->slider,$res[0]->caro_ticker,$res[0]->container,$res[0]->content,$res[0]->navigation);
+			
+			if($wpdb->query($q_add)){
+				update_option('advpssmethod'.$_POST['nextoptid'],get_option('advpssmethod'.$_POST['optset-id']));
+				$stsMgs =  "Duplicated successfully.";
+			}
 		}
 	}
 	if(isset($_POST['advps_submit'])){
@@ -227,6 +246,13 @@ fieldset {
 }
 </style>
 <div class="wrap">
+  <?php if(get_option('advps-update-notification') && get_option('advps-update-notification') == 'show'){?>
+  <div id="message" class="updated below-h2">
+    <p>Advanced post slider is updated. <span style="margin:0 10px;"><input class="button" type="button" onclick="document.location.href='http://www.wpcue.com/advanced-post-slider-2-3-0/';" value="Check what's new in version 2.3"></span>
+    <input class="button" type="button" onclick="document.location.href='admin.php?page=advps-slideshow&hide=1';" value="Hide this message">
+    </p>
+  </div>
+  <?php }?>
   <?php if($stsMgs != ''){?>
   <div id="message" class="updated below-h2">
     <p><?php echo $stsMgs;?></p>
@@ -241,7 +267,7 @@ fieldset {
 			require 'templates/template-three.php';
 		}elseif($currTab == 'thumb'){?>
   <div class="advps-col-right">
-    <h2>Advanced post slider 2.2.0</h2>
+    <h2>Advanced post slider <?php echo get_option('advps-curr-version');?></h2>
     <ul>
       <li><a href="http://www.wpcue.com/wordpress-plugins/advanced-post-slider/" target="_blank">Plugin Homepage</a></li>
       <li><a href="http://www.wpcue.com/support/forum/advanced-post-slider/" target="_blank">Help / Support</a></li>
@@ -249,7 +275,7 @@ fieldset {
       <li><a href="http://www.wpcue.com/faq/" target="_blank">FAQ</a></li>
     </ul>
     <h3>Do you like this Plugin?</h3>
-    <p>I spend lots of free hours to develop, maintain and providing support to this plugin.  Any kind of participation will be highly appreciated and real inspiration for me to work more.</p>
+    <p>We spend lots of hours to develop, maintain and providing support to this plugin.  Any kind of participation will be highly appreciated and real inspiration for us to work more.</p>
     <ul>
       <li>Write a small blog for Advanced post slider and give link to our site.</li>
       <li>Share it to your social media.</li>

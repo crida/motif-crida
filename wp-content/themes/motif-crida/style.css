@@ -114,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-family: "futura-pt", sans-serif;
 	line-height: 1.4;
-	font-weight: 800;
+	font-weight: 600;
 }
 
 article h2 {
@@ -196,13 +196,14 @@ li > ol {
 	margin-left: 1.1538461538em;
 }
 dt {
-	font-weight: 800;
+	font-weight: 600;
 }
 dd {
 	margin: 0 1.1538461538em 1.5em 1.1538461538em;
 }
 b, strong {
-	font-weight: 800;
+	font-weight: 600;
+
 }
 dfn, cite, em, i {
 	font-style: italic;
@@ -262,7 +263,7 @@ table {
 	width: 100%;
 }
 th {
-	font-weight: 800;
+	font-weight: 600;
 	padding: 0.6em;
 	text-transform: uppercase;
 }
@@ -432,7 +433,7 @@ a:active {
 	display: block;
 	font-size: 14px;
 	font-size: 1.0769rem;
-	font-weight: 800;
+	font-weight: 600;
 	height: auto;
 	left: 5px;
 	line-height: normal;
@@ -644,7 +645,7 @@ a:active {
 	margin-bottom: 12px;
 }
 .site-title {
-	
+
 }
 
 .main-site-branding {
@@ -1412,7 +1413,7 @@ object {
 	color: #404040;
 	font-size: 16px;
 	font-size: 1.2307rem;
-	font-weight: 800;
+	font-weight: 600;
 	text-align: right;
 }
 .jetpack-testimonial .entry-title:before {
@@ -1812,13 +1813,18 @@ object {
 
 
 
+
+/* =Footer - contactan's per a la Crida
+----------------------------------------------- */
 .first.footer-widgets {
 	width: 100%;
 	margin: 0px;
 	padding: 0px;
 }
 
-
+#text-3 {
+	margin: 0px;
+}
 
 #contactFooter {
 	width: 100%;
@@ -1840,14 +1846,13 @@ object {
 	width: 25%;
 }
 #contactFooter img {
-	height: 50px;
-	width: 166px;
+	width: 100%;
 	max-width: auto;
 }
 
 #contactFooter p {
-	font-size: 18px;
-	line-height: 50px;
+	font-size: 1.5em;
+	line-height: 1em;
 	text-align: right;
 	margin: 0px;
 	padding: 0px;
@@ -1858,7 +1863,7 @@ object {
 }
 
 .first.footer-widgets {
-	height: 50px;
+	height: auto;
 }
 
 
@@ -1866,8 +1871,10 @@ object {
 
 
 
-/* =Menu
+/* =Menu secondari per a la Crida
 ----------------------------------------------- */
+
+
 .home .secondary-navigation {
 	display: none;
 }
@@ -1944,4 +1951,18 @@ object {
 .secondary-navigation li.current_page_ancestor > a,
 .secondary-navigation li.current-menu-ancestor > a {
 	color: #afafaf;
+}aside#text-4 {
+	padding: 0px;
+	background: none;
+	box-shadow: none;
+}
+
+.banner-programa, .banner-llista, .banner-sobiranies {
+	box-shadow: rgba(0,0,0, 0.1) 0px 1px 2px;
+	display: block;
+	float: left;
+}
+
+.banner-eleccions, banner-programa {
+	margin: 0 0 1em 0;
 }

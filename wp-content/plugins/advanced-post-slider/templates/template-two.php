@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) || ! current_user_can( 'manage_options' ) ) exit;
 ?>
 <div class="advps-col-right">
-  <h2>Advanced post slider 2.2.0</h2>
+  <h2>Advanced post slider <?php echo get_option('advps-curr-version');?></h2>
   <ul>
     <li><a href="http://www.wpcue.com/wordpress-plugins/advanced-post-slider/" target="_blank">Plugin Homepage</a></li>
     <li><a href="http://www.wpcue.com/support/forum/advanced-post-slider/" target="_blank">Help / Support</a></li>
@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) || ! current_user_can( 'manage_options' ) ) exit;
     <li><a href="http://www.wpcue.com/faq/" target="_blank">FAQ</a></li>
   </ul>
   <h3>Do you like this Plugin?</h3>
-  <p>I spend lots of free hours to develop, maintain and providing support to this plugin.  Any kind of participation will be highly appreciated and real inspiration for me to work more.</p>
+  <p>We spend lots of hours to develop, maintain and providing support to this plugin.  Any kind of participation will be highly appreciated and real inspiration for us to work more.</p>
   <ul>
   	<li>Write a small blog for Advanced post slider and give link to our site.</li>
     <li>Share it to your social media.</li>
@@ -19,6 +19,7 @@ if ( ! defined( 'ABSPATH' ) || ! current_user_can( 'manage_options' ) ) exit;
   </ul>
 </div>
 <?php
+$tcount = $wpdb->get_results("SHOW TABLE STATUS WHERE name = '".$wpdb->prefix."advps_optionset'");
 foreach( $res2 as $dset){ 
 	$plist = unserialize($dset->plist);
 	$query = unserialize($dset->query);
@@ -26,6 +27,8 @@ foreach( $res2 as $dset){
 	$caro_ticker = unserialize($dset->caro_ticker);
 	$container = unserialize($dset->container);
 	$navigation = unserialize($dset->navigation);
+	
+	if( !isset( $container['advps_link_rel'] )) $container['advps_link_rel'] = 'none';
 
 ?>
 <div class="metabox-holder" style="margin-top:20px;">
@@ -327,6 +330,13 @@ foreach( $res2 as $dset){
                   &nbsp;px</td>
               </tr>
               <tr>
+                <th scope="row">Center whole slideshow</th>
+                <td><select name="advps_centering">
+                	<option value="no" <?php if(isset($container['advps_centering']) && $container['advps_centering'] == 'no'){echo 'selected="selected"';}?>>No</option>
+                    <option value="yes" <?php if(isset($container['advps_centering']) && $container['advps_centering'] == 'yes'){echo 'selected="selected"';}?>>Yes</option>
+                  </select></td>
+              </tr>
+              <tr>
                 <th scope="row">Background Color</th>
                 <td><input id="advpscolor<?php echo ++$flg?>" class="advps-color-picker" type="text" name="advps_bgcolor" value="<?php echo $container['advps_bgcolor'];?>" style="width:100px;" />
                   <div class="advpsfarb" style="padding-left:22%"></div></td>
@@ -388,6 +398,29 @@ foreach( $res2 as $dset){
                     <option value="custom" <?php if($container['advps_link_type'] == 'custom'){echo 'selected="selected"';}?>>Custom</option>
                   </select>
                   <span style="padding-left:10px; font-size:10px; font-style:italic;">[ N.B. For custom link create a custom field with name 'advps_custom_link' ]</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Link rel</th>
+                <td><select name="advps_link_rel">
+                    <option value="none" <?php if($container['advps_link_rel'] == 'none'){echo 'selected="selected"';}?>>None</option>
+                    <option value="alternate" <?php if($container['advps_link_rel'] == 'alternate'){echo 'selected="selected"';}?>>Alternate</option>
+                    <option value="archives" <?php if($container['advps_link_rel'] == 'archives'){echo 'selected="selected"';}?>>Archives</option>
+                    <option value="author" <?php if($container['advps_link_rel'] == 'author'){echo 'selected="selected"';}?>>Author</option>
+                    <option value="bookmark" <?php if($container['advps_link_rel'] == 'bookmark'){echo 'selected="selected"';}?>>Bookmark</option>
+                    <option value="external" <?php if($container['advps_link_rel'] == 'external'){echo 'selected="selected"';}?>>External</option>
+                    <option value="first" <?php if($container['advps_link_rel'] == 'first'){echo 'selected="selected"';}?>>First</option>
+                    <option value="help" <?php if($container['advps_link_rel'] == 'help'){echo 'selected="selected"';}?>>Help</option>
+                    <option value="icon" <?php if($container['advps_link_rel'] == 'icon'){echo 'selected="selected"';}?>>Icon</option>
+                    <option value="index" <?php if($container['advps_link_rel'] == 'index'){echo 'selected="selected"';}?>>Index</option>
+                    <option value="last" <?php if($container['advps_link_rel'] == 'last'){echo 'selected="selected"';}?>>Last</option>
+                    <option value="license" <?php if($container['advps_link_rel'] == 'license'){echo 'selected="selected"';}?>>License</option>
+                    <option value="next" <?php if($container['advps_link_rel'] == 'next'){echo 'selected="selected"';}?>>Next</option>
+                    <option value="nofollow" <?php if($container['advps_link_rel'] == 'nofollow'){echo 'selected="selected"';}?>>Nofollow</option>
+                    <option value="noreferrer" <?php if($container['advps_link_rel'] == 'noreferrer'){echo 'selected="selected"';}?>>Noreferrer</option>
+                    <option value="pingback" <?php if($container['advps_link_rel'] == 'pingback'){echo 'selected="selected"';}?>>Pingback</option>
+                    <option value="prefetch" <?php if($container['advps_link_rel'] == 'prefetch'){echo 'selected="selected"';}?>>Prefetch</option>
+                    <option value="prev" <?php if($container['advps_link_rel'] == 'prev'){echo 'selected="selected"';}?>>Prev</option>
+                  </select></td>
               </tr>
               <tr>
                 <th scope="row">link target</th>
@@ -488,8 +521,10 @@ foreach( $res2 as $dset){
         </fieldset>
         <form method="post" id="frmOptDel<?php echo $dset->id;?>" onsubmit="return false">
           <input type="hidden" value="<?php echo $dset->id;?>" name="optset-id" />
+          <input type="hidden" value="<?php echo $tcount[0]->Auto_increment;?>" name="nextoptid" />
           <p>
             <input type="submit" name="del-optset" value="Delete" class="button-secondary" onclick="deleteOptSet(<?php echo $dset->id;?>)" style="width:12%;" />
+            <span style="margin-left:5px;"><input type="submit" name="dup-optset" value="Duplicate" class="button-secondary" onclick="duplicateOptSet(<?php echo $dset->id;?>)" style="width:12%;" /></span>
           </p>
           <?php wp_nonce_field('advps-checkauthnonce','advps_wpnonce'); ?>
         </form>
@@ -501,7 +536,7 @@ foreach( $res2 as $dset){
 }
 $tcount = $wpdb->get_results("SHOW TABLE STATUS WHERE name = '".$wpdb->prefix."advps_optionset'");
 ?>
-<div style="position:relative; float:left; width:100%">
+<div style="position:relative; float:left; width:72%">
   <form method="post">
     <input type="hidden" name="nextoptid" value="<?php echo $tcount[0]->Auto_increment;?>" />
     <input type="hidden" name="template" value="two" />

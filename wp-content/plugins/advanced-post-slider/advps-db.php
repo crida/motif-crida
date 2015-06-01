@@ -51,6 +51,7 @@
 			"advps_thumbnail" => "advps-thumb-one",
 			"advps_default_image" => "",
 			"advps_sld_width" => "600",
+			"advps_centering" => "no",
 			"advps_bgcolor" => "#FFFFFF",
 			"advps_border_size" => "1", 
 			"advps_border_type" => "solid",
@@ -64,7 +65,7 @@
 	);
 	$advpsContainer2 = array_merge($advpsContainer,array("advps_ed_link" => "enable","advps_link_type" => "permalink","advps_link_target" => "_self"));
 	
-	$advpsContainer3 = array_merge($advpsContainer,array("advps_contpad1" => "10","advps_contpad2" => "10","advps_contpad3" => "10","advps_contpad4" => "10","advps_thumbnail" => "medium"));
+	$advpsContainer3 = array_merge($advpsContainer,array("advps_contpad1" => "0.8","advps_contpad2" => "0.8","advps_contpad3" => "0.8","advps_contpad4" => "0.8","advps_thumbnail" => "medium","advps_padu1"=>"vw","advps_padu2"=>"vw","advps_padu3"=>"vw","advps_padu4"=>"vw"));
 	
 	$advpsContent = array(
 			"advps_overlay_width" => "30", 
@@ -76,21 +77,38 @@
 			"advps_ttitle_tag" => "h2",
 			"advps_titleFcolor" => "#FFFFFF",
 			"advps_titleHcolor" => "#c9c9c9", 
-			"advps_titleFsize" => "1.5",
-			"advps_ttitleFSunit" => "vw",
-			"advps_titleLheight" => "1.6",
-			"advps_ttitleLHunit" => "vw", 
+			"advps_titleFsizeL" => "20",
+			"advps_titleFsize1" => "18",
+			"advps_titleFsize2" => "16",
+			"advps_titleFsize3" => "15",
+			"advps_titleFsize4" => "15",
+			"advps_titleFsize5" => "15",
+			"advps_titleLheightL" => "20",
+			"advps_titleLheight1" => "18",
+			"advps_titleLheight2" => "16",
+			"advps_titleLheight3" => "15",
+			"advps_titleLheight4" => "15",
+			"advps_titleLheight5" => "15",
 			"advps_excptFcolor" => "#FFFFFF", 
-			"advps_excptFsize" => "1", 
-			"advps_excptFSunit" => "vw",
-			"advps_excptLheight" => "1", 
-			"advps_excptLHunit" => "vw",
+			"advps_excptFsizeL" => "14", 
+			"advps_excptFsize1" => "12",
+			"advps_excptFsize2" => "12",
+			"advps_excptFsize3" => "12",
+			"advps_excptFsize4" => "12",
+			"advps_excptFsize5" => "12",
+			"advps_excptLheightL" => "14", 
+			"advps_excptLheight1" => "12",
+			"advps_excptLheight2" => "12",
+			"advps_excptLheight3" => "12",
+			"advps_excptLheight4" => "12",
+			"advps_excptLheight5" => "12",
 			"advps_excerptlen" => "25", 
 			"advps_excpt_visibility" => "always show",
 			"advps_excpt_position" => "left",
 			"advps_exclude_excpt" => "no",
 			"advps_ed_link" => "enable",
 			"advps_link_type" => "permalink",
+			"advps_link_rel" => "none",
 			"advps_link_target" => "_self"
 	);
 	$advpsContent2 = array(
@@ -99,18 +117,35 @@
 			"advps_ttitle_tag" => "h2",
 			"advps_titleFcolor" => "#565656",
 			"advps_titleHcolor" => "#000000", 
-			"advps_titleFsize" => "1.5",
-			"advps_ttitleFSunit" => "vw",
-			"advps_titleLheight" => "1.6",
-			"advps_ttitleLHunit" => "vw", 
+			"advps_titleFsizeL" => "20",
+			"advps_titleFsize1" => "18",
+			"advps_titleFsize2" => "16",
+			"advps_titleFsize3" => "15",
+			"advps_titleFsize4" => "15",
+			"advps_titleFsize5" => "15",
+			"advps_titleLheightL" => "20",
+			"advps_titleLheight1" => "18",
+			"advps_titleLheight2" => "16",
+			"advps_titleLheight3" => "15",
+			"advps_titleLheight4" => "15",
+			"advps_titleLheight5" => "15", 
 			"advps_excptFcolor" => "#444444", 
-			"advps_excptFsize" => "1", 
-			"advps_excptFSunit" => "vw",
-			"advps_excptLheight" => "1", 
-			"advps_excptLHunit" => "vw",
+			"advps_excptFsizeL" => "14", 
+			"advps_excptFsize1" => "12",
+			"advps_excptFsize2" => "12",
+			"advps_excptFsize3" => "12",
+			"advps_excptFsize4" => "12",
+			"advps_excptFsize5" => "12",
+			"advps_excptLheightL" => "14", 
+			"advps_excptLheight1" => "12",
+			"advps_excptLheight2" => "12",
+			"advps_excptLheight3" => "12",
+			"advps_excptLheight4" => "12",
+			"advps_excptLheight5" => "12",
 			"advps_excerptlen" => "25", 
 			"advps_ed_link" => "enable",
 			"advps_link_type" => "permalink",
+			"advps_link_rel" => "none",
 			"advps_link_target" => "_self"
 	);
 	$advpsNavigation = array(
@@ -141,6 +176,10 @@
 		
 		$db_version = get_option('advps-db-version');
 		$advps_opt_table = $wpdb->prefix.'advps_optionset';
+		
+		/*if($db_version){
+			update_option('advps-update-notification','show');
+		}*/
 		
 		if(!get_option('advpssmethod1')){
 			add_option('advpssmethod1','plist');

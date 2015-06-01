@@ -1,8 +1,9 @@
 <?php
 if ( ! defined( 'ABSPATH' ) || ! current_user_can( 'manage_options' ) ) exit;
 ?>
+
 <div class="advps-col-right">
-  <h2>Advanced post slider 2.2.0</h2>
+  <h2>Advanced post slider <?php echo get_option('advps-curr-version');?></h2>
   <ul>
     <li><a href="http://www.wpcue.com/wordpress-plugins/advanced-post-slider/" target="_blank">Plugin Homepage</a></li>
     <li><a href="http://www.wpcue.com/support/forum/advanced-post-slider/" target="_blank">Help / Support</a></li>
@@ -10,15 +11,16 @@ if ( ! defined( 'ABSPATH' ) || ! current_user_can( 'manage_options' ) ) exit;
     <li><a href="http://www.wpcue.com/faq/" target="_blank">FAQ</a></li>
   </ul>
   <h3>Do you like this Plugin?</h3>
-  <p>I spend lots of free hours to develop, maintain and providing support to this plugin.  Any kind of participation will be highly appreciated and real inspiration for me to work more.</p>
+  <p>We spend lots of hours to develop, maintain and providing support to this plugin.  Any kind of participation will be highly appreciated and real inspiration for us to work more.</p>
   <ul>
-  	<li>Write a small blog for Advanced post slider and give link to our site.</li>
+    <li>Write a small blog for Advanced post slider and give link to our site.</li>
     <li>Share it to your social media.</li>
     <li><a href="http://wordpress.org/support/view/plugin-reviews/advanced-post-slider" target="_blank">Give it a good rating and review</a></li>
     <li><a href="http://wordpress.org/plugins/advanced-post-slider/" target="_blank">Vote that it work</a></li>
   </ul>
 </div>
 <?php
+$tcount = $wpdb->get_results("SHOW TABLE STATUS WHERE name = '".$wpdb->prefix."advps_optionset'");
 foreach( $res1 as $dset){ 
 	$plist = unserialize($dset->plist);
 	$query = unserialize($dset->query);
@@ -27,6 +29,8 @@ foreach( $res1 as $dset){
 	$container = unserialize($dset->container);
 	$content = unserialize($dset->content);
 	$navigation = unserialize($dset->navigation);
+	
+	if( !isset($content['advps_link_rel'] )) $content['advps_link_rel'] = 'none';
 ?>
 <div class="metabox-holder" style="margin-top:20px;">
   <div class="postbox-container" style="width:100%">
@@ -326,6 +330,13 @@ foreach( $res1 as $dset){
                   &nbsp;px</td>
               </tr>
               <tr>
+                <th scope="row">Center whole slideshow</th>
+                <td><select name="advps_centering">
+                	<option value="no" <?php if(isset($container['advps_centering']) && $container['advps_centering'] == 'no'){echo 'selected="selected"';}?>>No</option>
+                    <option value="yes" <?php if(isset($container['advps_centering']) && $container['advps_centering'] == 'yes'){echo 'selected="selected"';}?>>Yes</option>
+                  </select></td>
+              </tr>
+              <tr>
                 <th scope="row">Background Color</th>
                 <td><input id="advpscolor<?php echo ++$flg?>" class="advps-color-picker" type="text" name="advps_bgcolor" value="<?php echo $container['advps_bgcolor'];?>" style="width:100px;" />
                   <div class="advpsfarb" style="padding-left:22%"></div></td>
@@ -455,27 +466,33 @@ foreach( $res1 as $dset){
               </tr>
               <tr>
                 <th scope="row">Title font size</th>
-                <td><input type="text" name="advps_titleFsize" value="<?php echo $content['advps_titleFsize'];?>" style="width:60px;" />
-                  <select name="advps_ttitleFSunit" style="vertical-align:top;">
-                    <option value="vw" <?php if($content['advps_ttitleFSunit'] == 'vw'){echo 'selected="selected"';}?>>vw</option>
-                    <option value="vh" <?php if($content['advps_ttitleFSunit'] == 'vh'){echo 'selected="selected"';}?>>vh</option>
-                    <option value="%" <?php if($content['advps_ttitleFSunit'] == '%'){echo 'selected="selected"';}?>>%</option>
-                    <option value="em" <?php if($content['advps_ttitleFSunit'] == 'em'){echo 'selected="selected"';}?>>em</option>
-                    <option value="px" <?php if($content['advps_ttitleFSunit'] == 'px'){echo 'selected="selected"';}?>>px</option>
-                    <option value="pt" <?php if($content['advps_ttitleFSunit'] == 'pt'){echo 'selected="selected"';}?>>pt</option>
-                  </select></td>
+                <td><input type="text" name="advps_titleFsizeL" value="<?php if(isset($content['advps_titleFsizeL'])){ echo $content['advps_titleFsizeL'];}else{echo 20;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For desktop, laptop and larger width device." />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_titleFsize1" value="<?php if(isset($content['advps_titleFsize1'])){ echo $content['advps_titleFsize1'];}else{echo 18;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 1024" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_titleFsize2" value="<?php if(isset($content['advps_titleFsize2'])){echo $content['advps_titleFsize2'];}else{echo 16;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 768" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_titleFsize3" value="<?php if(isset($content['advps_titleFsize3'])){echo $content['advps_titleFsize3'];}else{echo 15;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 650" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_titleFsize4" value="<?php if(isset($content['advps_titleFsize4'])){echo $content['advps_titleFsize4'];}else{echo 15;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 480" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_titleFsize5" value="<?php if(isset($content['advps_titleFsize5'])){echo $content['advps_titleFsize5'];}else{echo 15;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 320" />
+                  &nbsp;px&nbsp;&nbsp; <span style="padding-left:10px; font-size:10px; font-style:italic;">[ N.B. Different sizes for different media screen width. Hover the field to know which field is for which width. ]</span></td>
               </tr>
               <tr>
                 <th scope="row">Title line height</th>
-                <td><input type="text" name="advps_titleLheight" value="<?php echo $content['advps_titleLheight'];?>" style="width:60px;" />
-                  <select name="advps_ttitleLHunit" style="vertical-align:top;">
-                    <option value="vw" <?php if($content['advps_ttitleLHunit'] == 'vw'){echo 'selected="selected"';}?>>vw</option>
-                    <option value="vh" <?php if($content['advps_ttitleLHunit'] == 'vh'){echo 'selected="selected"';}?>>vh</option>
-                    <option value="%" <?php if($content['advps_ttitleLHunit'] == '%'){echo 'selected="selected"';}?>>%</option>
-                    <option value="em" <?php if($content['advps_ttitleLHunit'] == 'em'){echo 'selected="selected"';}?>>em</option>
-                    <option value="px" <?php if($content['advps_ttitleLHunit'] == 'px'){echo 'selected="selected"';}?>>px</option>
-                    <option value="pt" <?php if($content['advps_ttitleLHunit'] == 'pt'){echo 'selected="selected"';}?>>pt</option>
-                  </select></td>
+                <td><input type="text" name="advps_titleLheightL" value="<?php if(isset($content['advps_titleLheightL'])){ echo $content['advps_titleLheightL'];}else{echo 20;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For desktop, laptop and larger width device." />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_titleLheight1" value="<?php if(isset($content['advps_titleLheight1'])){ echo $content['advps_titleLheight1'];}else{echo 18;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 1024" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_titleLheight2" value="<?php if(isset($content['advps_titleLheight2'])){echo $content['advps_titleLheight2'];}else{echo 16;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 768" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_titleLheight3" value="<?php if(isset($content['advps_titleLheight3'])){echo $content['advps_titleLheight3'];}else{echo 15;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 650" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_titleLheight4" value="<?php if(isset($content['advps_titleLheight4'])){echo $content['advps_titleLheight4'];}else{echo 15;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 480" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_titleLheight5" value="<?php if(isset($content['advps_titleLheight5'])){echo $content['advps_titleLheight5'];}else{echo 15;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 320" />
+                  &nbsp;px&nbsp;&nbsp; <span style="padding-left:10px; font-size:10px; font-style:italic;">[ N.B. Each for different media screen width. Hover the field to know which field is for which width. ]</span></td>
               </tr>
               <tr>
                 <th scope="row">Excerpt font color</th>
@@ -484,27 +501,33 @@ foreach( $res1 as $dset){
               </tr>
               <tr>
                 <th scope="row">Excerpt font size</th>
-                <td><input type="text" name="advps_excptFsize" value="<?php echo $content['advps_excptFsize'];?>" style="width:60px;" />
-                  <select name="advps_excptFSunit" style="vertical-align:top;">
-                    <option value="vw" <?php if($content['advps_excptFSunit'] == 'vw'){echo 'selected="selected"';}?>>vw</option>
-                    <option value="vh" <?php if($content['advps_excptFSunit'] == 'vh'){echo 'selected="selected"';}?>>vh</option>
-                    <option value="%" <?php if($content['advps_excptFSunit'] == '%'){echo 'selected="selected"';}?>>%</option>
-                    <option value="em" <?php if($content['advps_excptFSunit'] == 'em'){echo 'selected="selected"';}?>>em</option>
-                    <option value="px" <?php if($content['advps_excptFSunit'] == 'px'){echo 'selected="selected"';}?>>px</option>
-                    <option value="pt" <?php if($content['advps_excptFSunit'] == 'pt'){echo 'selected="selected"';}?>>pt</option>
-                  </select></td>
+                <td><input type="text" name="advps_excptFsizeL" value="<?php if(isset($content['advps_excptFsizeL'])){ echo $content['advps_excptFsizeL'];}else{echo 14;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For desktop, laptop and larger width device." />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_excptFsize1" value="<?php if(isset($content['advps_excptFsize1'])){ echo $content['advps_excptFsize1'];}else{echo 12;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 1024" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_excptFsize2" value="<?php if(isset($content['advps_excptFsize2'])){echo $content['advps_excptFsize2'];}else{echo 12;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 768" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_excptFsize3" value="<?php if(isset($content['advps_excptFsize3'])){echo $content['advps_excptFsize3'];}else{echo 12;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 650" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_excptFsize4" value="<?php if(isset($content['advps_excptFsize4'])){echo $content['advps_excptFsize4'];}else{echo 12;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 480" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_excptFsize5" value="<?php if(isset($content['advps_excptFsize5'])){echo $content['advps_excptFsize5'];}else{echo 12;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 320" />
+                  &nbsp;px&nbsp;&nbsp; </td>
               </tr>
               <tr>
                 <th scope="row">Excerpt line height</th>
-                <td><input type="text" name="advps_excptLheight" value="<?php echo $content['advps_excptLheight'];?>" style="width:60px;" />
-                  <select name="advps_excptLHunit" style="vertical-align:top;">
-                    <option value="vw" <?php if($content['advps_excptLHunit'] == 'vw'){echo 'selected="selected"';}?>>vw</option>
-                    <option value="vh" <?php if($content['advps_excptLHunit'] == 'vh'){echo 'selected="selected"';}?>>vh</option>
-                    <option value="%" <?php if($content['advps_excptLHunit'] == '%'){echo 'selected="selected"';}?>>%</option>
-                    <option value="em" <?php if($content['advps_excptLHunit'] == 'em'){echo 'selected="selected"';}?>>em</option>
-                    <option value="px" <?php if($content['advps_excptLHunit'] == 'px'){echo 'selected="selected"';}?>>px</option>
-                    <option value="pt" <?php if($content['advps_excptLHunit'] == 'pt'){echo 'selected="selected"';}?>>pt</option>
-                  </select></td>
+                <td><input type="text" name="advps_excptLheightL" value="<?php if(isset($content['advps_excptLheightL'])){ echo $content['advps_excptLheightL'];}else{echo 14;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For desktop, laptop and larger width device." />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_excptLheight1" value="<?php if(isset($content['advps_excptLheight1'])){ echo $content['advps_excptLheight1'];}else{echo 12;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 1024" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_excptLheight2" value="<?php if(isset($content['advps_excptLheight2'])){echo $content['advps_excptLheight2'];}else{echo 12;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 768" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_excptLheight3" value="<?php if(isset($content['advps_excptLheight3'])){echo $content['advps_excptLheight3'];}else{echo 12;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 650" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_excptLheight4" value="<?php if(isset($content['advps_excptLheight4'])){echo $content['advps_excptLheight4'];}else{echo 12;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 480" />
+                  &nbsp;px&nbsp;&nbsp;
+                  <input type="text" name="advps_excptLheight5" value="<?php if(isset($content['advps_excptLheight5'])){echo $content['advps_excptLheight5'];}else{echo 12;}?>" style="width:40px;" onkeypress="return onlyNum(event);" title="For media screen smaller than 320" />
+                  &nbsp;px&nbsp;&nbsp; </td>
               </tr>
               <tr>
                 <th scope="row">Excerpt length</th>
@@ -532,6 +555,29 @@ foreach( $res1 as $dset){
                     <option value="custom" <?php if($content['advps_link_type'] == 'custom'){echo 'selected="selected"';}?>>Custom</option>
                   </select>
                   <span style="padding-left:10px; font-size:10px; font-style:italic;">[ N.B. For custom link create a custom field with name 'advps_custom_link' ]</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Link rel</th>
+                <td><select name="advps_link_rel">
+                    <option value="none" <?php if($content['advps_link_rel'] == 'none'){echo 'selected="selected"';}?>>None</option>
+                    <option value="alternate" <?php if($content['advps_link_rel'] == 'alternate'){echo 'selected="selected"';}?>>Alternate</option>
+                    <option value="archives" <?php if($content['advps_link_rel'] == 'archives'){echo 'selected="selected"';}?>>Archives</option>
+                    <option value="author" <?php if($content['advps_link_rel'] == 'author'){echo 'selected="selected"';}?>>Author</option>
+                    <option value="bookmark" <?php if($content['advps_link_rel'] == 'bookmark'){echo 'selected="selected"';}?>>Bookmark</option>
+                    <option value="external" <?php if($content['advps_link_rel'] == 'external'){echo 'selected="selected"';}?>>External</option>
+                    <option value="first" <?php if($content['advps_link_rel'] == 'first'){echo 'selected="selected"';}?>>First</option>
+                    <option value="help" <?php if($content['advps_link_rel'] == 'help'){echo 'selected="selected"';}?>>Help</option>
+                    <option value="icon" <?php if($content['advps_link_rel'] == 'icon'){echo 'selected="selected"';}?>>Icon</option>
+                    <option value="index" <?php if($content['advps_link_rel'] == 'index'){echo 'selected="selected"';}?>>Index</option>
+                    <option value="last" <?php if($content['advps_link_rel'] == 'last'){echo 'selected="selected"';}?>>Last</option>
+                    <option value="license" <?php if($content['advps_link_rel'] == 'license'){echo 'selected="selected"';}?>>License</option>
+                    <option value="next" <?php if($content['advps_link_rel'] == 'next'){echo 'selected="selected"';}?>>Next</option>
+                    <option value="nofollow" <?php if($content['advps_link_rel'] == 'nofollow'){echo 'selected="selected"';}?>>Nofollow</option>
+                    <option value="noreferrer" <?php if($content['advps_link_rel'] == 'noreferrer'){echo 'selected="selected"';}?>>Noreferrer</option>
+                    <option value="pingback" <?php if($content['advps_link_rel'] == 'pingback'){echo 'selected="selected"';}?>>Pingback</option>
+                    <option value="prefetch" <?php if($content['advps_link_rel'] == 'prefetch'){echo 'selected="selected"';}?>>Prefetch</option>
+                    <option value="prev" <?php if($content['advps_link_rel'] == 'prev'){echo 'selected="selected"';}?>>Prev</option>
+                  </select></td>
               </tr>
               <tr>
                 <th scope="row">link target</th>
@@ -632,9 +678,12 @@ foreach( $res1 as $dset){
         <!-- </form>-->
         <form method="post" id="frmOptDel<?php echo $dset->id;?>" onsubmit="return false">
           <input type="hidden" value="<?php echo $dset->id;?>" name="optset-id" />
+          <input type="hidden" value="<?php echo $tcount[0]->Auto_increment;?>" name="nextoptid" />
           <p>
             <input type="submit" name="del-optset" value="Delete" class="button-secondary" onclick="deleteOptSet(<?php echo $dset->id;?>)" style="width:12%;" />
-          </p>
+            <span style="margin-left:5px;">
+            <input type="submit" name="dup-optset" value="Duplicate" class="button-secondary" onclick="duplicateOptSet(<?php echo $dset->id;?>)" style="width:12%;" />
+            </span> </p>
           <?php wp_nonce_field('advps-checkauthnonce','advps_wpnonce'); ?>
         </form>
       </div>
@@ -643,12 +692,11 @@ foreach( $res1 as $dset){
 </div>
 <?php 
 }
-$tcount = $wpdb->get_results("SHOW TABLE STATUS WHERE name = '".$wpdb->prefix."advps_optionset'");
 ?>
 <div style="position:relative; float:left; width:72%">
   <form method="post">
     <input type="hidden" name="template" value="one" />
-    <input type="hidden" name="nextoptid" value="<?php echo $tcount[0]->Auto_increment;?>" />
+    <input type="hidden" name="nextoptid" id="nextoptid" value="<?php echo $tcount[0]->Auto_increment;?>" />
     <?php wp_nonce_field('advps-checkauthnonce','advps_wpnonce'); ?>
     <input type="submit" name="advps_submit" value="Add new slideshow" class="button-primary" style="font-weight:bold" />
   </form>

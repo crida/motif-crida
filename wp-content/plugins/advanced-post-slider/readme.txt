@@ -1,10 +1,10 @@
 ﻿=== Advanced post slider ===
 Contributors: digontoahsan
 Donate link: 
-Tags: post slider, slider, slideshow, wordpress slideshow, best slideshow, best post slider, best slideshow plugin, images, logo scroller, testimonial scroller, banner rotator, recent post slider, bxslider, image slider, sidebar slideshow, posts, post, image, image slideshow, responsive slideshow, responsive slider, best responsive slider, best carousel slider, carousel slider, ticker, responsive carousel slider, responsive carousel, showcase, news slider, thumbnail, thumbnail slider, featured thumbnail
+Tags: post slider, content slider, slider, slideshow, wordpress content slider, content, wordpress slideshow, images, logo scroller, testimonial scroller, banner rotator, recent post slider, bxslider, image slider, sidebar slideshow, posts, post, image, image slideshow, responsive slideshow, responsive slider, carousel slider, ticker, responsive carousel slider, responsive carousel, showcase, news slider, thumbnail, thumbnail slider, featured thumbnail
 Requires at least: 3.0.1
-Tested up to: 3.9.1
-Stable tag: 2.2.0
+Tested up to: 4.1.1
+Stable tag: 2.3.3
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -127,6 +127,20 @@ Dont have any FAQ for now.
 * Database query optimization.
 * Pager z-index issue resolved.
 * More unique id for container.
+
+= 2.3.0 =
+* Option added to centering the slideshow.
+* Media query for text size.
+* Padding unit for template three
+* Rel attribute for link.
+
+Check details here [Advanced post slider 2.3.0](http://www.wpcue.com/advanced-post-slider-2-3-0/)
+
+= 2.3.1 =
+* Small fix for template three padding
+
+= 2.3.3 =
+* Bug fix and Readme update.
 
 == Upgrade Notice ==
 * Upgrade is highly recommended.
